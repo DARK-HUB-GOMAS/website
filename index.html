@@ -25,7 +25,6 @@ body{
 button{font:inherit;color:inherit;border:0;background:none;cursor:pointer}
 input{font:inherit;color:inherit;background:none;border:0;outline:none}
 
-/* ═══ FONDO: estrellas estáticas (sin animación = 0 costo GPU) ═══ */
 .stars{
   position:fixed;inset:0;pointer-events:none;z-index:0;opacity:.65;
   background-image:
@@ -36,7 +35,6 @@ input{font:inherit;color:inherit;background:none;border:0;outline:none}
     radial-gradient(1px 1px at 94% 46%,rgba(242,232,220,.5),transparent),
     radial-gradient(1.4px 1.4px at 8% 68%,rgba(201,169,97,.55),transparent);
   background-size:500px 500px,420px 420px,600px 600px,480px 480px,560px 560px,700px 700px;
-  contain:strict;
 }
 .neb{position:fixed;border-radius:50%;pointer-events:none;z-index:0;opacity:.22}
 .neb.a{width:280px;height:280px;background:radial-gradient(circle,#4a1e2e,transparent 70%);top:-100px;left:-80px}
@@ -48,13 +46,12 @@ input{font:inherit;color:inherit;background:none;border:0;outline:none}
   overflow:hidden;}
 .stage.active{display:flex}
 
-/* ═══ FORM ═══ */
+/* FORM */
 .card{width:100%;max-width:400px;padding:32px 22px 26px;border-radius:20px;text-align:center;
   background:linear-gradient(160deg,rgba(74,30,46,.5) 0%,rgba(10,6,16,.95) 100%);
   border:1px solid var(--line);
   box-shadow:0 0 40px rgba(74,30,46,.35);
-  animation:cardIn .7s cubic-bezier(.2,.85,.25,1) both;
-  contain:content;}
+  animation:cardIn .7s cubic-bezier(.2,.85,.25,1) both;}
 @keyframes cardIn{from{opacity:0;transform:translate3d(0,24px,0) scale(.96)}}
 .emblem{width:60px;height:60px;margin:0 auto 16px;border-radius:50%;
   background:radial-gradient(circle at 34% 30%,#e8d19e,#c9a961 45%,#b76e79 80%,#4a1e2e);
@@ -98,15 +95,14 @@ input{font:inherit;color:inherit;background:none;border:0;outline:none}
 .card.turb{animation:cardTurb .8s cubic-bezier(.36,.07,.19,.97) both}
 .card.err{border-color:rgba(183,110,121,.6);box-shadow:0 0 50px rgba(183,110,121,.4)}
 
-/* ═══ QUIZ ═══ */
+/* QUIZ */
 #stage-quiz{background:radial-gradient(circle at 50% 50%,#1a0e1a 0%,#050309 80%);padding:16px}
 .quiz-wrap{width:100%;max-width:480px;padding:28px 22px 22px;border-radius:18px;
   background:linear-gradient(160deg,rgba(74,30,46,.5) 0%,rgba(10,6,16,.96) 100%);
   border:1px solid var(--line);
   box-shadow:0 0 40px rgba(74,30,46,.35);
   animation:cardIn .6s cubic-bezier(.2,.85,.25,1) both;
-  max-height:92dvh;overflow-y:auto;-webkit-overflow-scrolling:touch;
-  contain:content;}
+  max-height:92dvh;overflow-y:auto;-webkit-overflow-scrolling:touch;}
 .quiz-head{display:flex;align-items:center;gap:12px;margin-bottom:16px}
 .quiz-icon{width:44px;height:44px;border-radius:12px;flex-shrink:0;
   background:radial-gradient(circle at 34% 30%,#e8d19e,#c9a961 50%,#b76e79 100%);
@@ -154,7 +150,7 @@ input{font:inherit;color:inherit;background:none;border:0;outline:none}
   border:1px solid rgba(201,169,97,.35);
   font-size:.88rem;line-height:1.6;color:var(--cream);text-align:center;font-style:italic;}
 
-/* ═══ ENTRY ═══ */
+/* ENTRY */
 #stage-entry{background:radial-gradient(circle at 50% 50%,#1a0e1a 0%,#050309 80%);overflow:hidden;}
 .entry-wrap{text-align:center;padding:24px;position:relative;width:100%;
   display:flex;flex-direction:column;align-items:center;justify-content:center;}
@@ -199,7 +195,7 @@ input{font:inherit;color:inherit;background:none;border:0;outline:none}
   100%{opacity:0;transform:translate3d(0,-70vh,0) scale(1.05) rotate(var(--rot,20deg))}
 }
 
-/* ═══ SELLO ═══ */
+/* SELLO */
 #stage-seal{background:radial-gradient(circle at 50% 50%,#150a18 0%,#050309 80%)}
 .seal-area{text-align:center;padding:20px}
 .seal-hint{font-size:.72rem;letter-spacing:.28em;text-transform:uppercase;color:var(--muted);margin-bottom:26px;font-weight:600;opacity:0;animation:fadeIn .8s ease .4s forwards}
@@ -208,8 +204,7 @@ input{font:inherit;color:inherit;background:none;border:0;outline:none}
 .seal{position:relative;width:min(62vw,220px);height:min(62vw,220px);
   margin:0 auto;cursor:pointer;touch-action:none;user-select:none;-webkit-user-select:none;
   opacity:0;transform:scale(.9);
-  animation:sealIn .9s cubic-bezier(.2,.85,.25,1) .2s forwards;
-  contain:layout style paint;}
+  animation:sealIn .9s cubic-bezier(.2,.85,.25,1) .2s forwards;}
 @keyframes sealIn{to{opacity:1;transform:scale(1)}}
 .seal-svg{position:absolute;inset:0;width:100%;height:100%;overflow:visible}
 .seal-svg .track{fill:none;stroke:rgba(201,169,97,.14);stroke-width:2.5}
@@ -238,7 +233,7 @@ input{font:inherit;color:inherit;background:none;border:0;outline:none}
   opacity:0;animation:flashAnim .7s ease-out forwards;}
 @keyframes flashAnim{0%{opacity:0}15%{opacity:1}100%{opacity:0}}
 
-/* ═══ WORLD ═══ */
+/* WORLD */
 #stage-world{padding:0;align-items:stretch;justify-content:flex-start}
 .hud{position:fixed;top:0;left:0;right:0;z-index:20;
   padding:max(12px,env(safe-area-inset-top)) 14px 12px;
@@ -271,7 +266,7 @@ input{font:inherit;color:inherit;background:none;border:0;outline:none}
 .world{position:absolute;top:50%;left:50%;width:0;height:0;will-change:transform;transform-origin:0 0}
 .system{position:absolute;top:0;left:0;width:0;height:0}
 
-/* SOL: sombra estática, corona estática, latido con transform */
+/* SOL — SIN contain para que no se recorte nada */
 .sun{
   position:absolute;left:0;top:0;
   width:40px;height:40px;margin-left:-20px;margin-top:-20px;
@@ -283,7 +278,6 @@ input{font:inherit;color:inherit;background:none;border:0;outline:none}
     0 0 55px rgba(201,138,74,.35);
   animation:sunPulse 4s ease-in-out infinite;
   will-change:transform;
-  contain:layout style paint;
 }
 .sun:active{transform:scale(.9)}
 @keyframes sunPulse{
@@ -295,7 +289,7 @@ input{font:inherit;color:inherit;background:none;border:0;outline:none}
   background:radial-gradient(circle,rgba(255,235,180,.26) 0%,rgba(255,220,140,.1) 40%,transparent 68%);
 }
 
-/* ÓRBITA */
+/* ÓRBITA — SIN contain: paint para que los planetas NO se recorten */
 .orbit{
   position:absolute;left:0;top:0;
   width:calc(var(--r) * 2);height:calc(var(--r) * 2);
@@ -307,7 +301,6 @@ input{font:inherit;color:inherit;background:none;border:0;outline:none}
   will-change:transform;
   pointer-events:none;
   transform-origin:50% 50%;
-  contain:layout style paint;
 }
 @keyframes orbSpin{to{transform:rotateZ(360deg)}}
 
@@ -341,7 +334,6 @@ input{font:inherit;color:inherit;background:none;border:0;outline:none}
   animation:superFloat 9s ease-in-out infinite;
   transition:transform .25s;
   display:grid;place-items:center;
-  contain:layout style paint;
 }
 .super-planet svg{width:44%;height:44%;stroke:#1a0e1a;fill:none;stroke-width:1.3;stroke-linecap:round;stroke-linejoin:round;opacity:.7;pointer-events:none}
 .super-planet::before{
@@ -407,7 +399,7 @@ input{font:inherit;color:inherit;background:none;border:0;outline:none}
 .loader-pct{margin-top:14px;font-size:.66rem;letter-spacing:.2em;
   color:var(--gold-light);font-variant-numeric:tabular-nums;font-weight:800}
 
-/* ═══ MODAL NOTAS ═══ */
+/* MODAL NOTAS */
 .modal{position:fixed;inset:0;z-index:200;display:flex;align-items:center;justify-content:center;
   padding:16px;background:rgba(5,3,9,.88);
   opacity:0;visibility:hidden;transition:opacity .25s,visibility 0s linear .25s;
@@ -420,8 +412,7 @@ input{font:inherit;color:inherit;background:none;border:0;outline:none}
   box-shadow:0 0 34px -6px var(--accent,rgba(201,169,97,.4));
   transform:scale(.94) translate3d(0,10px,0);
   transition:transform .3s cubic-bezier(.2,.85,.25,1);
-  max-height:86dvh;overflow-y:auto;-webkit-overflow-scrolling:touch;margin:auto;
-  contain:content;}
+  max-height:86dvh;overflow-y:auto;-webkit-overflow-scrolling:touch;margin:auto;}
 .modal.open .mbox{transform:scale(1) translate3d(0,0,0)}
 .mtag{display:inline-block;padding:4px 11px;border-radius:999px;margin-bottom:12px;
   font-size:.58rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;
@@ -448,7 +439,7 @@ input{font:inherit;color:inherit;background:none;border:0;outline:none}
   100%{opacity:0;transform:translate3d(calc(-50% + var(--dx)),calc(-50% + var(--dy)),0) scale(0)}
 }
 
-/* ═══ EXIT TRAP ═══ */
+/* EXIT TRAP */
 .exit-modal{position:fixed;inset:0;z-index:500;
   display:flex;align-items:center;justify-content:center;
   padding:16px;background:rgba(5,3,9,.9);
@@ -490,7 +481,7 @@ input{font:inherit;color:inherit;background:none;border:0;outline:none}
   transition:opacity .4s ease,transform .4s cubic-bezier(.34,1.4,.5,1);}
 .exit-btn.quedo.show{opacity:1;transform:scale(1)}
 
-/* ═══ CERTIFICADO ═══ */
+/* CERTIFICADO */
 .marriage-modal{
   position:fixed;inset:0;z-index:460;
   display:flex;align-items:center;justify-content:center;
@@ -518,7 +509,6 @@ input{font:inherit;color:inherit;background:none;border:0;outline:none}
   transform:scale(.94) translate3d(0,14px,0);
   transition:transform .55s cubic-bezier(.2,.85,.25,1);
   max-height:92dvh;overflow-y:auto;-webkit-overflow-scrolling:touch;margin:auto;
-  contain:content;
 }
 .marriage-modal.open .marriage-cert{transform:scale(1) translate3d(0,0,0)}
 .marriage-cert::before,.marriage-cert::after{
@@ -557,7 +547,7 @@ input{font:inherit;color:inherit;background:none;border:0;outline:none}
   font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;}
 .cert-btn:active{transform:scale(.98)}
 
-/* ═══ FINALE ═══ */
+/* FINALE */
 .finale{
   position:fixed;inset:0;z-index:450;
   display:flex;align-items:center;justify-content:center;
@@ -599,7 +589,6 @@ input{font:inherit;color:inherit;background:none;border:0;outline:none}
   .zbtn{width:34px;height:34px}
   .marriage-cert{padding:34px 20px 26px}
 }
-/* Modo reducido: elimina animaciones en equipos con esta preferencia */
 @media (prefers-reduced-motion:reduce){
   *,*::before,*::after{
     animation-duration:.01ms !important;
@@ -633,11 +622,11 @@ input{font:inherit;color:inherit;background:none;border:0;outline:none}
       </div>
       <div class="field">
         <label for="fAge">Tu edad</label>
-        <input id="fAge" type="number" inputmode="numeric" placeholder="Ingresa tu edad" maxlength="2" required>
+        <input id="fAge" type="number" inputmode="numeric" placeholder="—" maxlength="2" required>
       </div>
       <div class="field">
         <label for="fYear">El año en que llegaste al mundo</label>
-        <input id="fYear" type="number" inputmode="numeric" placeholder="Ingresa el año" maxlength="4" required>
+        <input id="fYear" type="number" inputmode="numeric" placeholder="—" maxlength="4" required>
       </div>
       <button type="submit" class="btn">Entrar</button>
       <p class="fmsg" id="fMsg"></p>
@@ -1239,8 +1228,8 @@ const ORBITS = [
 
 function planetSize(){
   const r = Math.random();
-  if (r < 0.30) return 7 + Math.random() * 3;
-  if (r < 0.78) return 12 + Math.random() * 5;
+  if (r < 0.30) return 8 + Math.random() * 3;
+  if (r < 0.78) return 13 + Math.random() * 5;
   return 18 + Math.random() * 6;
 }
 let noteIdx = 0;
